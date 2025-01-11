@@ -11,10 +11,21 @@ const run = async (src) => {
 }
 
 (async () => {
-    run("Surname");
-    run("Age");
-    run("Address.City");
-    run("Other.Misc");
-    run("Other.Nothing");
-    run("Other.`Over 18 ?`")
+    await run("Surname");
+    await run("Age");
+    await run("Address.City");
+    await run("Other.Misc");
+    await run("Other.Nothing");
+    await run("Other.`Over 18 ?`")
+
+    await run("Phone[0]");
+    await run("Phone[1]");
+    await run("Phone[-1]");
+    await run("Phone[-2]");
+    await run("Phone[8]");
+    await run("Phone[0].number");
+    await run("Phone.number");
+    await run("Phone.number[0]");
+    await run("(Phone.number)[0]");
+    await run("Phone[[0..1]]");
 })()
