@@ -7,7 +7,7 @@ const data = JSON.parse(rawData);
 const run = async (src) => {
     const expression = jsonata(src);
     const result = await expression.evaluate(data);  // returns 24
-    console.log(src + ": " + result);
+    console.log(src + ": " + JSON.stringify(result));
 }
 
 (async () => {
@@ -28,4 +28,12 @@ const run = async (src) => {
     await run("Phone.number[0]");
     await run("(Phone.number)[0]");
     await run("Phone[[0..1]]");
+
+    await run("Phone[type='mobile']");
+    await run("Phone[type='mobile'].number");
+    await run("Phone[type='office'].number");
+
+    await run("Address.*");
+    await run("*.Postcode");
+    await run("**.Postcode");
 })()
