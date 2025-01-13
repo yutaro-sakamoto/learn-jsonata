@@ -36,4 +36,8 @@ const run = async (src) => {
     await run("Address.*");
     await run("*.Postcode");
     await run("**.Postcode");
+
+    await run("FirstName & ' ' & Surname");
+    await run("Address.(Street & ', ' & City)");
+    await run("5 & 0 & true");
 })()
