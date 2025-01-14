@@ -40,4 +40,12 @@ const run = async (src) => {
     await run("FirstName & ' ' & Surname");
     await run("Address.(Street & ', ' & City)");
     await run("5 & 0 & true");
+
+    await run("Email.Address");
+    await run("Email.[address]");
+    await run("[Address, Other.`Alternative.Address`].City");
+
+    await run("Phone.{type: number}");
+    await run("Phone{type: number}");
+    await run("Phone{type: number[]}");
 })()
