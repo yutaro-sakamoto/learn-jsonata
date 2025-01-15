@@ -48,4 +48,6 @@ const run = async (src) => {
     await run("Phone.{type: number}");
     await run("Phone{type: number}");
     await run("Phone{type: number[]}");
+
+    await run("(5 + 3) * 4");
 })()
